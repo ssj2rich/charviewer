@@ -80,6 +80,18 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="images\bigBG.png" />
+    <Content Include="images\BigBright.png" />
+    <Content Include="images\BigBrightMid.png" />
+    <Content Include="images\BigDark.png" />
+    <Content Include="images\BigDarkEdge.png" />
+    <Content Include="images\BigDarkTile.png" />
+    <Content Include="images\dnd.png" />
+    <Content Include="images\SmallBright.png" />
+    <Content Include="images\SmallBrightTile.png" />
+    <Content Include="images\SmallDark.png" />
+    <Content Include="images\SmallDarkEdge.png" />
+    <Content Include="images\SmallDarkTile.png" />
     <Content Include="index.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Scripts\angular-animate.js" />
@@ -113,6 +125,7 @@
     <Content Include="Scripts\angular-ui\ui-bootstrap.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\app\dndApp.js" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular-touch.min.js.map" />
     <Content Include="Scripts\angular-sanitize.min.js.map" />
@@ -126,6 +139,8 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="data\5\Tordek.dnd4e" />
+    <None Include="Properties\PublishProfiles\ssj2rich.com.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -899,6 +914,7 @@
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="models\AbilityScores.cs" />
+    <Compile Include="models\defenses.cs" />
     <Compile Include="models\Details.cs" />
     <Compile Include="models\dndChar.cs" />
     <Compile Include="models\User.cs" />
@@ -913,9 +929,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="data\5\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

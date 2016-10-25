@@ -23,5 +23,11 @@ namespace CharViewer.models
         public string Appearance { get; set; }
         public string Companions { get; set; }
         public string Notes { get; set; }
+
+        public string Initiative { get; set; }
+        public string Speed { get; set; }
+        public string SavingThrows { get; set; }
+
+
     }
 }

@@ -9,9 +9,10 @@ namespace CharViewer.models
     {
         
         public int Id { get; set; }
-
-        public Details[] Details { get; set; }
-        public AbilityScores[] AbilityScores { get; set; }
+        public string test { get; set; }
+        public Details Details { get; set; }
+        public AbilityScores AbilityScores { get; set; }
+        public Defenses Defenses { get; set; }
 
     }
 }

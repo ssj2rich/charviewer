@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<D20Rules game-system="D&amp;D4E">
+	<Changelog>
+	Unicorn Horn
+	Dragons Lightning Gland
+	Dragons Acidic Gland
+	Vial of Dragons Blood	
+	Rotten Dragons Teeth
+	Hellhound Leather
+	
+	</Changelog>	
+	<RulesElement name="Doctor" type="Feat" internal-id="ID_FMP_FEAT_3593" source="Player Essentials: Class Compendium" revision-date="6/15/2011 10:13:54 AM">
+		<Flavor> You are well versed in the medical practices needed to tend to the wounderd in combat and out of it. </Flavor>
+		<Prereqs> Trained in Heal </Prereqs>
+		<print-prereqs> Trained in Heal </print-prereqs>
+		<specific name="Tier"> Heroic </specific>
+		<specific name="Short Description"> A successful heal check on an ally allows him to use a healing surge without spending it </specific>
+		<specific name="Special" />
+		<specific name="type" />
+		<specific name="Associated Power Info" />
+		<specific name="Associated Powers" />
+		<rules>
+			<statadd name="Heal Misc" value="+5" type="Feat" />
+		</rules>
+When you perform a healing check during combat you may allow an ally to use a healing surge without spending it.
+	</RulesElement>
+		<RulesElement name="Survivor" type="Feat" internal-id="ID_FMP_FEAT_3594" source="Player Essentials: Class Compendium" revision-date="6/15/2011 10:13:54 AM">
+		<Flavor> You have persisted against all odds and survived where most would not. </Flavor>
+		<Prereqs> </Prereqs>
+		<print-prereqs>  </print-prereqs>
+		<specific name="Tier"> Heroic </specific>
+		<specific name="Short Description"> Gain 4 additional feat choices </specific>
+		<specific name="Special" />
+		<specific name="type" />
+		<specific name="Associated Power Info" />
+		<specific name="Associated Powers" />
+		<rules>
+			<select type="Feat" number="4" />
+			<grant name="ID_INTERNAL_SKILL_TRAINING_HEAL" type="Skill Training" />
+		</rules>
+You may select 4 feats of your choice, in addition to becoming a self trained healer.
+	</RulesElement>
+	<RulesElement name="Crystal embedded ceramic ring" type="Magic Item" internal-id="ID_FMP_MAGIC_ITEM_10006" source="Dragon Magazine 364">
+		<Flavor>  Small ceramic ring with a yellow crystal emitting warm light embedded in it, wearing it gives a warm sensation throughout your body. </Flavor>
+		<specific name="Level"> 1 </specific>
+		<specific name="Gold"> </specific>
+		<specific name="Magic Item Type"> Ring </specific>
+		<specific name="Tier" />
+		<specific name="_Item_Set_ID" />
+		<specific name="Armor" />
+		<specific name="Weapon" />
+		<specific name="Item Slot"> Ring </specific>
+		<specific name="Requirement" />
+		<specific name="Critical" />
+		<specific name="Special" />
+		<specific name="Power"> </specific>
+		<specific name="_Rarity" />
+		<specific name="Granted Powers" />
+		<specific name="Rarity"> Uncommon </specific>
+		<specific name="Property">  </specific>
+		<rules>
+			<statadd name="resist:necrotic" value="+2" type="resist" zero="true"/>
+		</rules>
+			Wearing this ring seems to push back the shadow of death just slightly granting 2 resist against necrotic damage.
+	</RulesElement>
+	<RulesElement name="Plate Helmet" type="Magic Item" internal-id="ID_FMP_MAGIC_ITEM_9294" source="Dragon Magazine 364">
+		<Flavor>  A simple plate helmet that covers from the frow to the back of the head. </Flavor>
+		<specific name="Level"> 1 </specific>
+		<specific name="Gold"> 50 </specific>
+		<specific name="Magic Item Type"> Head Slot Item </specific>
+		<specific name="Tier" />
+		<specific name="_Item_Set_ID" />
+		<specific name="Armor" />
+		<specific name="Weapon" />
+		<specific name="Item Slot"> Head </specific>
+		<specific name="Requirement" />
+		<specific name="Critical" />
+		<specific name="Special" />
+		<specific name="Power"> </specific>
+		<specific name="_Rarity" />
+		<specific name="Granted Powers" />
+		<specific name="Rarity"> Uncommon </specific>
+		<specific name="Property">  </specific>
+		<specific name="Enhancement"> +1 AC </specific>
+		<rules>
+			<statadd name="AC" value="+1" />
+		</rules>
+	</RulesElement>
+	<RulesElement name="Plate Gauntlets" type="Magic Item" internal-id="ID_FMP_MAGIC_ITEM_9295" source="Dragon Magazine 364">
+		<Flavor>  Simple plate Gauntlets that covers the wrist and hands but not the fingers. </Flavor>
+		<specific name="Level"> 1 </specific>
+		<specific name="Gold"> 50 </specific>
+		<specific name="Magic Item Type"> Hands Slot Item </specific>
+		<specific name="Tier" />
+		<specific name="_Item_Set_ID" />
+		<specific name="Armor" />
+		<specific name="Weapon" />
+		<specific name="Item Slot"> Hands </specific>
+		<specific name="Requirement" />
+		<specific name="Critical" />
+		<specific name="Special" />
+		<specific name="Power"> </specific>
+		<specific name="_Rarity" />
+		<specific name="Granted Powers" />
+		<specific name="Rarity"> Uncommon </specific>
+		<specific name="Property">  </specific>
+		<specific name="Enhancement"> +1 AC </specific>
+		<rules>
+			<statadd name="AC" value="+1" />
+		</rules>
+	</RulesElement>
+	<RulesElement name="Plate Bracers" type="Magic Item" internal-id="ID_FMP_MAGIC_ITEM_9296" source="Dragon Magazine 364">
+		<Flavor>  Simple plate Bracers that covers the arm from elbow to wrist. </Flavor>
+		<specific name="Level"> 1 </specific>
+		<specific name="Gold"> 50 </specific>
+		<specific name="Magic Item Type"> Arms Slot Item </specific>
+		<specific name="Tier" />
+		<specific name="_Item_Set_ID" />
+		<specific name="Armor" />
+		<specific name="Weapon" />
+		<specific name="Item Slot"> Arms </specific>
+		<specific name="Requirement" />
+		<specific name="Critical" />
+		<specific name="Special" />
+		<specific name="Power"> </specific>
+		<specific name="_Rarity" />
+		<specific name="Granted Powers" />
+		<specific name="Rarity"> Uncommon </specific>
+		<specific name="Property">  </specific>
+		<specific name="Enhancement"> +1 AC </specific>
+		<rules>
+			<statadd name="AC" value="+1" />
+		</rules>
+	</RulesElement>
+	<RulesElement name="Plate Greaves" type="Magic Item" internal-id="ID_FMP_MAGIC_ITEM_9297" source="Dragon Magazine 364">
+		<Flavor>  Simple plate Greaves that covers the shin and knee. </Flavor>
+		<specific name="Level"> 1 </specific>
+		<specific name="Gold"> 50 </specific>
+		<specific name="Magic Item Type"> Feet Slot Item </specific>
+		<specific name="Tier" />
+		<specific name="_Item_Set_ID" />
+		<specific name="Armor" />
+		<specific name="Weapon" />
+		<specific name="Item Slot"> Feet </specific>
+		<specific name="Requirement" />
+		<specific name="Critical" />
+		<specific name="Special" />
+		<specific name="Power"> </specific>
+		<specific name="_Rarity" />
+		<specific name="Granted Powers" />
+		<specific name="Rarity"> Uncommon </specific>
+		<specific name="Property">  </specific>
+		<specific name="Enhancement"> +1 AC </specific>
+		<rules>
+			<statadd name="AC" value="+1" />
+		</rules>
+	</RulesElement>
+		<RulesElement name="Amulet of Lolth" type="Magic Item" internal-id="ID_FMP_MAGIC_ITEM_9298" source="Dragon Magazine 364">
+		<Flavor>  An onyx pendant of a spider clutching a dagger with an image of a naked buxom woman carved into the blade. </Flavor>
+		<specific name="Level"> 1 </specific>
+		<specific name="Gold"> </specific>
+		<specific name="Magic Item Type"> Neck Slot Item </specific>
+		<specific name="Tier" />
+		<specific name="_Item_Set_ID" />
+		<specific name="Armor" />
+		<specific name="Weapon" />
+		<specific name="Item Slot"> Neck </specific>
+		<specific name="Requirement" />
+		<specific name="Critical" />
+		<specific name="Special" />
+		<specific name="Power"> </specific>
+		<specific name="_Rarity" />
+		<specific name="Granted Powers" />
+		<specific name="Rarity"> Uncommon </specific>
+		<specific name="Property"> Whoever comes in touch with this pendant and is of Evil alignment is overcome with the desire to obtain and own it. A will check of 25 or over is needed to resist the desire.  </specific>
+		<rules>
+		</rules>
+	</RulesElement>
+		<RulesElement name="Necklace of Kord" type="Magic Item" internal-id="ID_FMP_MAGIC_ITEM_9299" source="Dragon Magazine 364">
+		<Flavor>  Sliver chain necklace with a axe which hilt is a crenct moon on top of a cradling flame. </Flavor>
+		<specific name="Level"> 1 </specific>
+		<specific name="Gold"> </specific>
+		<specific name="Magic Item Type"> Neck Slot Item </specific>
+		<specific name="Tier" />
+		<specific name="_Item_Set_ID" />
+		<specific name="Armor" />
+		<specific name="Weapon" />
+		<specific name="Item Slot"> Neck </specific>
+		<specific name="Requirement" />
+		<specific name="Critical" />
+		<specific name="Special" />
+		<specific name="Power"> </specific>
+		<specific name="_Rarity" />
+		<specific name="Granted Powers" />
+		<specific name="Rarity"> Uncommon </specific>
+		<specific name="Property"> This necklace appears ancient, if it had any importance at some time its been long forgotten </specific>
+		<rules>
+		</rules>
+	</RulesElement>
+		<RulesElement name="Circlet of Golem Command" type="Magic Item" internal-id="ID_FMP_MAGIC_ITEM_10000" source="Dragon Magazine 364">
+		<Flavor>  Simple plate Greaves that covers the shin and knee. </Flavor>
+		<specific name="Level"> 5 </specific>
+		<specific name="Gold"> 2550 </specific>
+		<specific name="Magic Item Type"> Head Slot Item </specific>
+		<specific name="Tier" />
+		<specific name="_Item_Set_ID" />
+		<specific name="Armor" />
+		<specific name="Weapon" />
+		<specific name="Item Slot"> Head </specific>
+		<specific name="Requirement" />
+		<specific name="Critical" />
+		<specific name="Special" />
+		<specific name="Power"> </specific>
+		<specific name="_Rarity" />
+		<specific name="Granted Powers" />
+		<specific name="Rarity"> Uncommon </specific>
+		<specific name="Property"> Allows the wearer to issue one command to one golem every one minute </specific>
+		<rules>
+		</rules>	
+	</RulesElement>
+		<RulesElement name="Vans Hand" type="Magic Item" internal-id="ID_FMP_MAGIC_ITEM_10001" source="Dragon Magazine 364">
+		<Flavor>  An intricate black steel gauntlet from elbow to fingers with gold trimming. On the back of the hand is a small concealed button. </Flavor>
+		<specific name="Level"> 1 </specific>
+		<specific name="Magic Item Type"> Alternative Reward </specific>
+		<specific name="Alternative Reward"> Story Award </specific>
+		<specific name="Property"> This hand has some remote control property, but its uses are unclear. </specific>
+		<rules>
+		</rules>
+	</RulesElement>
+		<RulesElement name="living artifacts, the warforged special edition: TC-130 addendum included!" type="Magic Item" internal-id="ID_FMP_MAGIC_ITEM_10002" source="Dragon Magazine 364">
+		<Flavor> Iron bound tome with a blue cover and black text in elven: “artefacts vivant l'édition spéciale forgeliers : TC- 130 addendum inclus!”(living artifacts the warforged special edition: TC-130 addendum included!. </Flavor>
+		<specific name="Level"> 5 </specific>
+		<specific name="Magic Item Type"> Alternative Reward </specific>
+		<specific name="Alternative Reward"> Story Award </specific>
+		<specific name="Property"> This book contains all one needs to know to create and control warforged constructs in 5 chapters and 1 addendum </specific>
+		<rules>
+		</rules>
+	</RulesElement>
+		<RulesElement name="Black Stone" type="Magic Item" internal-id="ID_FMP_MAGIC_ITEM_10003" source="Dragon Magazine 364">
+		<Flavor> This black smooth oval stone is heavier than what its size suggests. </Flavor>
+		<specific name="Level"> 5 </specific>
+		<specific name="Magic Item Type"> Alternative Reward </specific>
+		<specific name="Alternative Reward"> Story Award </specific>
+		<specific name="Property"> The carrier of this stone is cursed with -1 to attack rolls and -1 to damage rolls </specific>
+		<rules>
+		</rules>
+	</RulesElement>
+		<RulesElement name="Iron Crown" type="Magic Item" internal-id="ID_FMP_MAGIC_ITEM_10004" source="Dragon Magazine 364">
+		<Flavor> This simple iron crown is part of a set of 3 worn usually by undead lich or similar undead creatures. </Flavor>
+		<specific name="Level"> 2 </specific>
+		<specific name="Magic Item Type"> Alternative Reward </specific>
+		<specific name="Alternative Reward"> Story Award </specific>
+		<specific name="Property"> The crown has a slight magical aura about it, perhaps it has some use pertaining to undeads and their control. </specific>
+		<rules>
+		</rules>
+	</RulesElement>	
+		<RulesElement name="Healing Slime" type="Magic Item" internal-id="ID_FMP_MAGIC_ITEM_10005" source="Player's Handbook">
+		<Flavor> This 'slime' for lack of a better term, is infact the Giant Ants Birthing gel. </Flavor>
+		<specific name="Level"> 1 </specific>
+		<specific name="Gold"> 5000 </specific>
+		<specific name="Magic Item Type"> Potion </specific>
+		<specific name="Tier" />
+		<specific name="_Item_Set_ID" />
+		<specific name="Armor" />
+		<specific name="Weapon" />
+		<specific name="Item Slot" />
+		<specific name="Requirement" />
+		<specific name="Critical" />
+		<specific name="Special" />
+		<specific name="Power"> Power (Consumable): Minor Action. Spreading this slime over injuries immedietly stops bleeding and replenishes all lost blood. Heal completely but lose 4 turns. </specific>
+		<specific name="_Rarity" />
+		<specific name="Granted Powers" />
+		<specific name="Rarity"> Common </specific>
+	</RulesElement>
+</D20Rules>

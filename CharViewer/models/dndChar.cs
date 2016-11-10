@@ -14,6 +14,7 @@ namespace CharViewer.models
         public AbilityScores AbilityScores { get; set; }
         public Defenses Defenses { get; set; }
         public List<Skills> skills { get; set; }
+        public List<Power> Powers { get; set; }
 
     }
 }

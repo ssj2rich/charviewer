@@ -82,6 +82,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Global.asax" />
     <Content Include="images\bigBG.png" />
     <Content Include="images\BigBright.png" />
     <Content Include="images\BigBrightMid.png" />
@@ -103,6 +104,7 @@
     <Content Include="Scripts\angular-cookies.js" />
     <Content Include="Scripts\angular-cookies.min.js" />
     <Content Include="Scripts\angular-csp.css" />
+    <Content Include="Scripts\angular-filter.min.js" />
     <Content Include="Scripts\angular-loader.js" />
     <Content Include="Scripts\angular-loader.min.js" />
     <Content Include="Scripts\angular-message-format.js" />
@@ -141,7 +143,50 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
-    <Content Include="data\5\tordek2.dnd4e" />
+    <Content Include="data\5\tordek-lvl2.dnd4e" />
+    <Content Include="dnd4eData\00-sources.part" />
+    <Content Include="dnd4eData\01-bug-fixes.part" />
+    <Content Include="dnd4eData\02-base.part" />
+    <Content Include="dnd4eData\03-base-items.part" />
+    <Content Include="dnd4eData\04-new-items.part" />
+    <Content Include="dnd4eData\05-backgrounds.part" />
+    <Content Include="dnd4eData\06-races.part" />
+    <Content Include="dnd4eData\07-darksun.part" />
+    <Content Include="dnd4eData\08-themes.part" />
+    <Content Include="dnd4eData\09-feats.part" />
+    <Content Include="dnd4eData\10-cleric.part" />
+    <Content Include="dnd4eData\11-fighter.part" />
+    <Content Include="dnd4eData\12-paladin.part" />
+    <Content Include="dnd4eData\13-ranger.part" />
+    <Content Include="dnd4eData\14-rogue.part" />
+    <Content Include="dnd4eData\15-warlock.part" />
+    <Content Include="dnd4eData\16-warlord.part" />
+    <Content Include="dnd4eData\17-wizard.part" />
+    <Content Include="dnd4eData\18-avenger.part" />
+    <Content Include="dnd4eData\19-barbarian.part" />
+    <Content Include="dnd4eData\20-bard.part" />
+    <Content Include="dnd4eData\21-druid.part" />
+    <Content Include="dnd4eData\22-invoker.part" />
+    <Content Include="dnd4eData\23-shaman.part" />
+    <Content Include="dnd4eData\24-sorcerer.part" />
+    <Content Include="dnd4eData\25-warden.part" />
+    <Content Include="dnd4eData\26-ardent.part" />
+    <Content Include="dnd4eData\27-battlemind.part" />
+    <Content Include="dnd4eData\28-monk.part" />
+    <Content Include="dnd4eData\29-psion.part" />
+    <Content Include="dnd4eData\30-runepriest.part" />
+    <Content Include="dnd4eData\31-seeker.part" />
+    <Content Include="dnd4eData\32-artificer.part" />
+    <Content Include="dnd4eData\33-assassin.part" />
+    <Content Include="dnd4eData\34-swordmage.part" />
+    <Content Include="dnd4eData\35-vampire.part" />
+    <Content Include="dnd4eData\36-companion.part" />
+    <Content Include="dnd4eData\37-hybrid.part" />
+    <Content Include="dnd4eData\38-paragon-paths.part" />
+    <Content Include="dnd4eData\39-epic-destinies.part" />
+    <Content Include="dnd4eData\40-gear.part" />
+    <Content Include="dnd4eData\sample.part" />
+    <Content Include="dnd4eData\WotC.index" />
     <None Include="Properties\PublishProfiles\ssj2rich.com.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -901,6 +946,9 @@
     <Content Include="Scripts\version.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -919,8 +967,10 @@
     <Compile Include="models\defenses.cs" />
     <Compile Include="models\Details.cs" />
     <Compile Include="models\dndChar.cs" />
+    <Compile Include="models\Powers.cs" />
     <Compile Include="models\Skills.cs" />
     <Compile Include="models\User.cs" />
+    <Compile Include="models\Weapon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

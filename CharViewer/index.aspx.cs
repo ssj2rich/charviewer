@@ -19,6 +19,7 @@ namespace CharViewer
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["userId"] = 5;
             if (Session["userId"] == null || int.Parse(Session["userId"].ToString()) <= 0)
             {
                 Response.Redirect("login.aspx");
@@ -48,6 +49,9 @@ namespace CharViewer
                     Defenses def = new Defenses();
                     Details det = new Details();
                     det.languages = new List<string>();
+
+
+                    List<Power> powers = new List<Power>();
 
                     List<Skills> skills = new List<Skills>();
 
@@ -120,8 +124,8 @@ namespace CharViewer
                     skills.Add(skill);
 
 
-                  
-                        // block to extract ability scores including everything
+
+                    // block to extract ability scores including everything
                     det.Name = data.D20Character.CharacterSheet.Details["name"].Value;
                     det.Age = data.D20Character.CharacterSheet.Details["Age"].Value;
                     det.Alignment = data.D20Character.CharacterSheet.Details["Alignment"].Value;
@@ -139,8 +143,9 @@ namespace CharViewer
                     det.StoredMoney = data.D20Character.CharacterSheet.Details["StoredMoney"].Value;
                     det.Traits = data.D20Character.CharacterSheet.Details["Traits"].Value;
                     det.Weight = data.D20Character.CharacterSheet.Details["Weight"].Value;
-                    
 
+                    det.Milestones = 0;
+                    det.ActionPoints = 1;
 
 
 
@@ -186,11 +191,10 @@ namespace CharViewer
                                 case "Reflex Defense":
                                     def.Reflex = item["@value"];
                                     break;
+
                                 case "Will Defense":
                                     def.Will = item["@value"];
                                     break;
-
-
 
 
 
@@ -198,13 +202,12 @@ namespace CharViewer
                                 //"Level"
                                 //"Hit Points"
                                 //"_LEVEL-ONE-HPS"
-                                //"Healing Surges"
+
 
                                 //"_BaseActionPoints"
                                 //"XP Needed"
 
-                                //"Passive Perception"
-                                //"Passive Insight"
+
 
                                 //"Size"
 
@@ -221,7 +224,7 @@ namespace CharViewer
                         {
                         }
 
-
+                        det.HasPowerPoints = false;
                         try
                         {
                             Skills foundSkill = new Skills();
@@ -604,6 +607,41 @@ namespace CharViewer
                                     }
                                     break;
 
+                                case "Hit Points":
+                                    det.HpMax = item["@value"].Value;
+                                    det.HpCurrent = item["@value"].Value; //TODO aviad save data to db or file or something
+                                    det.HpBloodied = Math.Floor(Convert.ToDouble(det.HpMax) / 2).ToString();
+                                    break;
+
+                                case "Healing Surges":
+                                    det.HealingSurgesMax = item["@value"].Value;
+
+                                    det.HealingSurgesValue = item["statadd"][1]["@value"].Value;
+                                    if (det.HealingSurgesValue.Length == 1)
+                                    {
+                                        det.HealingSurgesValue = "0" + det.HealingSurgesValue;
+                                    }
+                                    det.HealingSurgesCurrent = item["@value"].Value; //TODO aviad save data to db or file or something
+                                    break;
+
+                                case "Power Points":
+                                    det.PowerPointsMax = item["@value"].Value;
+                                    det.PowerPointsCurrent = item["@value"].Value; //TODO aviad save data to db or file or something
+                                    det.HpBloodied = Math.Floor(Convert.ToDouble(det.HpMax) / 2).ToString();
+                                    det.HasPowerPoints = true;
+                                    break;
+
+                                case "_BaseActionPoints":
+                                    det.ActionPoints = int.Parse(item["@value"].Value);
+                                    break;
+
+                                case "Passive Perception":
+                                    det.PassivePerception = int.Parse(item["@value"].Value);
+                                    break;
+                                case "Passive Insight":
+                                    det.PassiveInsight = int.Parse(item["@value"].Value);
+                                    break;
+
                                 default:
                                     break;
                             }
@@ -633,10 +671,170 @@ namespace CharViewer
                                 case "Class":
                                     det.Class = item["@name"].Value;
                                     break;
+                                case "Vision":
+                                    det.Vision = item["@name"].Value;
+                                    break;
+
+                                case "Deity":
+                                    det.Deity = item["@name"].Value;
+                                    break;
+
                             }
                         }
                         catch (Exception)
                         {
+                        }
+                    }
+
+                    foreach (var item in data.D20Character.CharacterSheet.PowerStats.Power)
+                    {
+                        Power singlePower = new Power();
+                        singlePower.name = item["@name"].Value;
+                        singlePower.text = "temp text";
+
+                        foreach (var spec in item.specific)
+                        {
+                            try
+                            {// try to get usage
+
+                                string specName = spec["@name"];
+                                switch (specName)
+                                {
+                                    case "Power Usage":
+                                        singlePower.Usage = spec["#text"];
+                                        singlePower.Usage = singlePower.Usage.Trim();
+                                        break;
+
+                                    case "Action Type":
+                                        singlePower.Action = spec["#text"];
+                                        singlePower.Action = singlePower.Action.Trim();
+                                        break;
+
+                                    default:
+                                        break;
+                                }
+
+                            }
+                            catch (Exception)
+                            {
+
+                            }
+                        }
+                        try
+                        {
+
+
+                            foreach (var powerWep in item.Weapon)
+                            {
+                                Weapon wep = new Weapon();
+                                try
+                                {
+                                    wep.name = powerWep["@name"];
+                                }
+                                catch (Exception)
+                                {
+
+                                    wep.name = powerWep.Value;
+                                }
+
+                                try
+                                {
+                                    wep.type = powerWep.RulesElement["@name"];
+                                }
+                                catch (Exception)
+                                {
+                                }
+
+                                try
+                                {
+                                    wep.attackBonus = powerWep["AttackBonus"];
+
+                                }
+                                catch (Exception)
+                                {
+
+                                }
+
+                                try
+                                {
+                                    wep.Damage = powerWep["Damage"];
+                                }
+                                catch (Exception)
+                                {
+                                }
+
+                                try
+                                {
+                                    wep.attackStat = powerWep["AttackStat"];
+                                }
+                                catch (Exception)
+                                {
+                                }
+                                try
+                                {
+                                    wep.Defense = powerWep["Defense"];
+                                }
+                                catch (Exception)
+                                {
+                                }
+                                try
+                                {
+                                    wep.hitComponents = powerWep["HitComponents"];
+                                }
+                                catch (Exception)
+                                {
+                                }
+                                try
+                                {
+                                    wep.dmgComponents = powerWep["DamageComponents"];
+                                }
+                                catch (Exception)
+                                {
+                                }
+
+
+                                //add power data from dnd files
+
+                                Power matchingPower = Global.allPowers.Where(d => d.name == singlePower.name).FirstOrDefault();
+                                if (matchingPower != null)
+                                {
+                                    singlePower.range = matchingPower.range;
+                                    singlePower.target = matchingPower.target;
+                                    singlePower.Hit = matchingPower.Hit;
+                                    singlePower.Effect = matchingPower.Effect;
+                                    singlePower.Miss = matchingPower.Miss;
+                                    singlePower.Special = matchingPower.Special;
+                                    singlePower.flavorText = matchingPower.flavorText;
+                                    singlePower.Attack = matchingPower.Attack;
+                                    singlePower.PowerType = matchingPower.PowerType;
+                                    singlePower.AttackType = matchingPower.AttackType;
+                                    singlePower.Requirement = matchingPower.Requirement;
+                                    singlePower.SecondaryTarget = matchingPower.SecondaryTarget;
+                                    singlePower.weaponText = matchingPower.weaponText;
+                                    singlePower.Level = matchingPower.Level;
+
+                                }
+
+                                singlePower.weapons.Add(wep);
+                            }
+                        }
+                        catch (Exception)
+                        {
+                        }
+                        
+                        powers.Add(singlePower);
+                    }
+
+                    foreach (var item in data.D20Character.Level)
+                    {
+                        string level = item.RulesElement["@name"];
+                        string fullText = Convert.ToString(item);
+                        foreach (var charPowers in powers)
+                        {
+                            if (fullText.Contains(charPowers.name))
+                            {
+                                charPowers.Level = level;
+                            }
                         }
                     }
 
@@ -651,6 +849,7 @@ namespace CharViewer
                     dChar.AbilityScores = ab;
                     dChar.Defenses = def;
                     dChar.Details = det;
+                    dChar.Powers = powers;
                     dChar.test = "mosffhe";
                 }
 

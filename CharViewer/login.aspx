@@ -11,15 +11,15 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <div>
-                <asp:TextBox ID="tbUserName" runat="server" placeholder="User Name"></asp:TextBox>
+            <div style="height:70px;">
+                <asp:TextBox ID="tbUserName" runat="server" placeholder="User Name" style="width: 300px; height: 50px; font-size: 30px;"></asp:TextBox>
             </div>
-            <div>
-                <asp:TextBox ID="tbPassword" runat="server" placeholder="password" type="password"></asp:TextBox>
+            <div style="height:70px;">
+                <asp:TextBox ID="tbPassword" runat="server" placeholder="password" type="password" style="width: 300px; height: 50px; font-size: 30px;"></asp:TextBox>
             </div>
 
-            <div>
-                <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
+            <div style="height:70px;">
+                <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" style="width: 300px; height: 50px; font-size: 30px;" />
             </div>
         </div>
     </form>

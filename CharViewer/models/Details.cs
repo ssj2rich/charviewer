@@ -30,6 +30,28 @@ namespace CharViewer.models
         public string Speed { get; set; }
         public string SavingThrows { get; set; }
 
+        public string HpBloodied { get; set; }
+        public string HpCurrent { get; set; }
+        public string HpMax { get; set; }
+
+        public string HealingSurgesValue { get; set; }
+        public string HealingSurgesCurrent { get; set; }
+        public string HealingSurgesMax { get; set; }
+
+        public string PowerPointsCurrent { get; set; }
+        public string PowerPointsMax { get; set; }
+        public bool HasPowerPoints { get; set; }
+
+        public int Milestones { get; set; }
+
+        public int ActionPoints { get; set; }
+
+        public int PassivePerception { get; set; }
+        public int PassiveInsight { get; set; }
+
+        public string Vision { get; set; }
+        public string Deity { get; set; }
+
         public List<string> languages { get; set; }
 
 
